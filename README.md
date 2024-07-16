@@ -30,6 +30,7 @@ track
   select top 1 title,first_name, last_name,levels
  from employee
  order by levels desc;
+
 ![image](https://github.com/user-attachments/assets/8ed4abef-7528-4caa-8827-78badc725245)
 
  
@@ -39,6 +40,7 @@ track
   from invoice
   group by billing_country 
   order by Count_of_Invoices desc;
+  
 ![image](https://github.com/user-attachments/assets/ad029319-9a73-4ade-8920-fa8ae71b8df0)
 
 
@@ -47,6 +49,7 @@ track
 select top 3 total
 from invoice
 order by total desc;
+
 ![image](https://github.com/user-attachments/assets/3131d5c3-736f-4639-b0cf-fe95b8c6b009)
 
      
@@ -74,6 +77,7 @@ from customers join invoice
 on customers.customer_id=invoice.customer_id
 group by customers.customer_id, first_name,last_name
 order by Total_spending desc;
+
 ![image](https://github.com/user-attachments/assets/22dfc740-415f-49b7-9f07-3043764453b9)
 
 
@@ -105,6 +109,7 @@ JOIN track ON track.track_id = invoice_line.track_id
 JOIN genre ON genre.genre_id = track.genre_id
 WHERE genre.name LIKE 'Rock'
 ORDER BY email;
+
 ![image](https://github.com/user-attachments/assets/22789aae-4162-43a8-b43f-45be2e4a6659)
 
 
@@ -119,6 +124,7 @@ join genre on genre.genre_id=track.genre_id
 where genre.name like 'Rock'
 group by artist.artist_id, artist.name
 order by Number_of_Songs desc;
+
 ![image](https://github.com/user-attachments/assets/e485f6ac-d16f-44bd-b7b5-5fa389597871)
 
  
@@ -128,7 +134,8 @@ select name,milliseconds
 from track
 where milliseconds >(select avg(milliseconds) as AVerage_song_length
                      from track)
-					 order by milliseconds desc;
+					order by milliseconds desc;
+     
 ![image](https://github.com/user-attachments/assets/2f2b7362-478e-43e8-82e0-ed0643798548)
       
    
@@ -191,6 +198,7 @@ join customers on customers.customer_id=invoice.customer_id
 group by customers.customer_id,first_name,last_name,billing_country)
 select * from Customer_with_country where RowNum <=1
 order by Total_Spending desc;
+
 ![image](https://github.com/user-attachments/assets/9acbf45f-5e40-4b61-a8e5-0cb0808d419e)
 
   
